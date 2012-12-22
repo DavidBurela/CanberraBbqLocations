@@ -43,7 +43,7 @@ namespace ActBbqLocations.RT.Models
         public int CompareTo(object obj)
         {
             var locationData = obj as LocationData;
-            return string.CompareOrdinal(LocationName, locationData.LocationName);
+            return string.CompareOrdinal(LocationName, locationData.LocationName + locationData.Latitude);  // Little hack as locations have the same name
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
